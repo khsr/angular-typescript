@@ -1,0 +1,15 @@
+<div class="xs-sidebar-backdrop d-block d-sm-none" [ngClass]="showMobileSidebar ? 'show-xs-side-filter' : ''" (click)="showMobileSidebar = false"></div>
+<!--ANALYTICS BREADCRUMB START-->
+<skael-breadcrumb (toggleMobileSidebar)="showMobileSidebar = !showMobileSidebar"></skael-breadcrumb>
+<!--ANALYTICS BREADCRUMB END-->
+<!--SIDEBAR START-->
+<skael-sidebar [ngClass]="showMobileSidebar ? 'show-xs-side-filter' : 'hide-xs-side-filter'" [verticals]="verticals" [analytics_filter]="analytics_filter" (onFilterChange)="filterChanged()"></skael-sidebar>
+<!--SIDEBAR END-->
+<!--ROUTING CONTENT START-->
+<div class="analytics-content">
+  <!--ANALYTICS STATUS START-->
+  <skael-status [totalPurchases]="totalPurchases" [totalPurchasesGraphData]="totalPurchasesGraphData"></skael-status>
+  <!--ANALYTICS STATUS END-->
+  <skael-purchases [vendors]="vendors" [purchase_categories]="purchase_categories"></skael-purchases>
+</div>
+<!--ROUTING CONTENT END-->
